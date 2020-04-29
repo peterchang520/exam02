@@ -49,24 +49,23 @@ void logger(float t[], int sample){
       y[i] = t[1];
       z[i] = t[2];
       move = move + 0.5*(9.8*t[0])*0.1*0.1 + 0.5*(9.8*t[1])*0.1*0.1;
-      pc.printf("%f\n", move);
       movement[i] = move;
       wait(0.1);
    }
    redLED = !redLED;
    //send data to pc
-//    for(int i=0; i<sample; i++){
-//       pc.printf("%f\n", x[i]);
-//    }
-//    for(int i=0; i<sample; i++){
-//       pc.printf("%f\n", y[i]);
-//    }
-//    for(int i=0; i<sample; i++){
-//       pc.printf("%f\n", z[i]);
-//    }
-//    for(int i=0; i<sample; i++){
-//       pc.printf("%f\n", movement[i]);
-//    }
+   for(int i=0; i<sample; i++){
+      pc.printf("%f\n", x[i]);
+   }
+   for(int i=0; i<sample; i++){
+      pc.printf("%f\n", y[i]);
+   }
+   for(int i=0; i<sample; i++){
+      pc.printf("%f\n", z[i]);
+   }
+   for(int i=0; i<sample; i++){
+      pc.printf("%f\n", movement[i]);
+   }
 }
 
 int main() {
